@@ -1,9 +1,15 @@
+// @flow
+
 import React from 'react';
 import './App.css';
 
-const App = () => (
+type Props = {
+  title: string,
+};
+
+const App = ({ title }: Props) => (
   <div>
-    Hello from App!
+    Hello from {title} !
   </div>
 );
 
