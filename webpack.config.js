@@ -31,6 +31,9 @@ module.exports = (options = {}) => {
       publicPath: '/',
       filename: JSFilenameIdentifier,
     },
+    devServer: {
+      historyApiFallback: true,
+    },
     performance: !isProduction ? false : {
       hints: 'warning',
     },
