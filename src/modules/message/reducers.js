@@ -2,8 +2,8 @@
 
 import { combineReducers } from 'redux';
 import * as ACTION_TYPES from './actionTypes';
-import type { Action } from 'store/types';
-import type { MessageByIdState, MessageIdsState } from './types';
+import type { State, Action } from 'store/types';
+import type { MessageId, MessageByIdState, MessageIdsState } from './types';
 
 const messageByIdInitialState: MessageByIdState = {};
 const messageById = (state = messageByIdInitialState, action: Action) => {
@@ -41,3 +41,10 @@ export default combineReducers({
   messageById,
   messageIds,
 });
+
+const getMessageById = (state: State, id: MessageId) => state.messageById[id];
+const getMessageIds = (state: State) => state.messageIds;
+
+export const getMessages = (state: State) => {
+  return getMessageIds(state).map(id => getMessageById(state, id));
+};

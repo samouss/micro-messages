@@ -1,7 +1,7 @@
 // @flow
 
 import { createMockMessage } from 'test/message';
-import reducers from '../reducers';
+import reducers, * as selectors from '../reducers';
 
 describe('message', () => {
   describe('[reducers]', () => {
@@ -86,6 +86,32 @@ describe('message', () => {
         };
 
         const actual = reducers(previousState, action);
+
+        expect(actual).toEqual(expectation);
+      });
+    });
+  });
+
+  describe('[selectors]', () => {
+    describe('getMessages', () => {
+      it('expect to return an array of messages', () => {
+        const state = {
+          messageById: {
+            ID123: createMockMessage('ID123'),
+            ID456: createMockMessage('ID456'),
+          },
+          messageIds: [
+            'ID123',
+            'ID456',
+          ],
+        };
+
+        const expectation = [
+          createMockMessage('ID123'),
+          createMockMessage('ID456'),
+        ];
+
+        const actual = selectors.getMessages(state);
 
         expect(actual).toEqual(expectation);
       });
