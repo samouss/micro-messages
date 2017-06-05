@@ -1,7 +1,7 @@
 // @flow
 
 import { createMockMessage } from 'test/message';
-import module, * as selectors from '../reducers';
+import reducers, * as selectors from '../reducers';
 
 describe('message', () => {
   describe('[reducers]', () => {
@@ -15,7 +15,7 @@ describe('message', () => {
       const action = { type: 'NOT_MATCH' };
 
       const expectation = initialState;
-      const actual = module.reducers(previousState, action);
+      const actual = reducers(previousState, action);
 
       expect(actual).toEqual(expectation);
     });
@@ -44,7 +44,7 @@ describe('message', () => {
           ],
         };
 
-        const actual = module.reducers(previousState, action);
+        const actual = reducers(previousState, action);
 
         expect(actual).toEqual(expectation);
       });
@@ -85,7 +85,7 @@ describe('message', () => {
           ],
         };
 
-        const actual = module.reducers(previousState, action);
+        const actual = reducers(previousState, action);
 
         expect(actual).toEqual(expectation);
       });
