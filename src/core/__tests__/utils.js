@@ -39,4 +39,72 @@ describe('utils', () => {
       });
     });
   });
+
+  describe('createReducer', () => {
+    it('expect to return initial state if previous state is not defined', () => {
+      const initialState = 0;
+      const previousState = undefined;
+
+      const reducer = utils.createReducer(initialState, {
+        INCREMENT: state => state,
+      });
+
+      const expectation = 0;
+      const actual = reducer(previousState, {
+        type: 'DECREMENT',
+      });
+
+      expect(actual).toEqual(expectation);
+    });
+
+    it('expect to return previous state if no action match', () => {
+      const initialState = 0;
+      const previousState = 5;
+
+      const reducer = utils.createReducer(initialState, {
+        INCREMENT: state => state + 1,
+      });
+
+      const expectation = 5;
+      const actual = reducer(previousState, {
+        type: 'DECREMENT',
+      });
+
+      expect(actual).toEqual(expectation);
+    });
+
+    it('expect to return the new computed state if action match from previous state', () => {
+      const initialState = 0;
+      const previousState = undefined;
+
+      const reducer = utils.createReducer(initialState, {
+        INCREMENT: (state, action) => state + action.by,
+      });
+
+      const expectation = 2;
+      const actual = reducer(previousState, {
+        type: 'INCREMENT',
+        by: 2,
+      });
+
+      expect(actual).toEqual(expectation);
+    });
+
+    it('expect to return the new computed state if action match from previous state', () => {
+      const initialState = 0;
+      const previousState = 5;
+
+      const reducer = utils.createReducer(initialState, {
+        INCREMENT: (state, action) => state + action.by,
+      });
+
+      const expectation = 7;
+      const actual = reducer(previousState, {
+        type: 'INCREMENT',
+        by: 2,
+      });
+
+      expect(actual).toEqual(expectation);
+    });
+  });
 });
