@@ -1,10 +1,13 @@
 // @flow
 
 import type { Store as ReduxStore, Dispatch as ReduxDispatch } from 'redux';
+import type { MessageState, MessageAction } from '../modules/messages/types';
 
-export type State = {};
+export type State =
+  & MessageState;
 
-export type Action = {};
+export type Action =
+  | MessageAction;
 
 export type Store = ReduxStore<State, Action>;
 
