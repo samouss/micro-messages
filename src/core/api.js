@@ -1,6 +1,6 @@
 // @flow
 
-import type { Message } from 'modules/message/types';
+import type { Message } from 'modules/messages/types';
 import { timeoutify } from './utils';
 import db from '../../db.json';
 
