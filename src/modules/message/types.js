@@ -12,9 +12,12 @@ export type Message = {
   +visibility: Visibility,
 };
 
+export type MessageByIdState = { [id: MessageId]: Message };
+export type MessageIdsState = Array<MessageId>;
+
 export type MessageState = {
-  +messageById: { [id: MessageId]: Message },
-  +messageIds: Array<MessageId>,
+  +messageById: MessageByIdState,
+  +messageIds: MessageIdsState,
 };
 
 export type MessageAction =
