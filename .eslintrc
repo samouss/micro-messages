@@ -34,6 +34,15 @@
     "no-shadow": 0,
     "no-use-before-define": ["error", { "functions": false, "classes": true }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/require-extension": "off"
+    "react/require-extension": "off",
+    "react/sort-comp": [1, {
+      order: [
+        'type-annotations',
+        'static-methods',
+        'lifecycle',
+        'everything-else',
+        'render',
+      ],
+    }],
   }
 }
