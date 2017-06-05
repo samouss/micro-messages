@@ -6,5 +6,10 @@
 ./flow-typed
 
 [options]
+module.name_mapper='^components\/\(.*\)$' -> '<PROJECT_ROOT>/src/components/\1'
+module.name_mapper='^core\/\(.*\)$' -> '<PROJECT_ROOT>/src/core/\1'
+module.name_mapper='^modules\/\(.*\)$' -> '<PROJECT_ROOT>/src/modules/\1'
+module.name_mapper='^store\/\(.*\)$' -> '<PROJECT_ROOT>/src/store/\1'
+module.name_mapper='^test\/\(.*\)$' -> '<PROJECT_ROOT>/test//\1'
 
 [version]
