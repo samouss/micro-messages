@@ -18,6 +18,6 @@ export type MessageState = {
 };
 
 export type MessageAction =
-  | { type: 'FETCH_MESSAGES' }
+  | { type: 'FETCH_MESSAGES_REQUEST' }
   | { type: 'FETCH_MESSAGES_SUCCESS', messages: Array<Message> }
   | { type: 'FETCH_MESSAGES_FAILURE' };
