@@ -3,10 +3,10 @@
 import { combineReducers } from 'redux';
 import * as ACTION_TYPES from './actionTypes';
 import type { State, Action } from 'store/types';
-import type { MessageId, MessageByIdState, MessageIdsState } from './types';
+import type { MessageId, ByIdState, IdsState } from './types';
 
-const messageByIdInitialState: MessageByIdState = {};
-const messageById = (state = messageByIdInitialState, action: Action) => {
+const byIdInitialState: ByIdState = {};
+const byId = (state = byIdInitialState, action: Action) => {
   switch (action.type) {
     case ACTION_TYPES.FETCH_MESSAGES_SUCCESS: {
       return {
@@ -24,8 +24,8 @@ const messageById = (state = messageByIdInitialState, action: Action) => {
   }
 };
 
-const messageIdsInitialState: MessageIdsState = [];
-const messageIds = (state = messageIdsInitialState, action: Action) => {
+const idsInitialState: IdsState = [];
+const ids = (state = idsInitialState, action: Action) => {
   switch (action.type) {
     case ACTION_TYPES.FETCH_MESSAGES_SUCCESS: {
       return state.concat(action.messages.map(message => message.id));
@@ -37,13 +37,19 @@ const messageIds = (state = messageIdsInitialState, action: Action) => {
   }
 };
 
-export default combineReducers({
-  messageById,
-  messageIds,
-});
+const name = 'messages';
+const getState = (state: State) => state[name];
 
-const getMessageById = (state: State, id: MessageId) => state.messageById[id];
-const getMessageIds = (state: State) => state.messageIds;
+export default {
+  name,
+  reducers: combineReducers({
+    byId,
+    ids,
+  }),
+};
+
+const getMessageById = (state: State, id: MessageId) => getState(state).byId[id];
+const getMessageIds = (state: State) => getState(state).ids;
 
 export const getMessages = (state: State) => {
   return getMessageIds(state).map(id => getMessageById(state, id));

@@ -12,12 +12,14 @@ export type Message = {
   +visibility: Visibility,
 };
 
-export type MessageByIdState = { [id: MessageId]: Message };
-export type MessageIdsState = Array<MessageId>;
+export type ByIdState = { [id: MessageId]: Message };
+export type IdsState = Array<MessageId>;
 
 export type MessageState = {
-  +messageById: MessageByIdState,
-  +messageIds: MessageIdsState,
+  +messages: {
+    +byId: ByIdState,
+    +ids: IdsState,
+  },
 };
 
 export type MessageAction =

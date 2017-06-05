@@ -1,13 +1,13 @@
 // @flow
 
 import { createMockMessage } from 'test/message';
-import reducers, * as selectors from '../reducers';
+import module, * as selectors from '../reducers';
 
 describe('message', () => {
   describe('[reducers]', () => {
     const initialState = {
-      messageById: {},
-      messageIds: [],
+      byId: {},
+      ids: [],
     };
 
     it('expect to return the initial state', () => {
@@ -15,7 +15,7 @@ describe('message', () => {
       const action = { type: 'NOT_MATCH' };
 
       const expectation = initialState;
-      const actual = reducers(previousState, action);
+      const actual = module.reducers(previousState, action);
 
       expect(actual).toEqual(expectation);
     });
@@ -34,17 +34,17 @@ describe('message', () => {
 
         const expectation = {
           ...initialState,
-          messageById: {
+          byId: {
             ID123: createMockMessage('ID123'),
             ID456: createMockMessage('ID456'),
           },
-          messageIds: [
+          ids: [
             'ID123',
             'ID456',
           ],
         };
 
-        const actual = reducers(previousState, action);
+        const actual = module.reducers(previousState, action);
 
         expect(actual).toEqual(expectation);
       });
@@ -57,11 +57,11 @@ describe('message', () => {
 
         const previousState = {
           ...initialState,
-          messageById: {
+          byId: {
             ID123: createMockMessage('ID123'),
             ID456: createMockMessage('ID456'),
           },
-          messageIds: [
+          ids: [
             'ID123',
             'ID456',
           ],
@@ -71,13 +71,13 @@ describe('message', () => {
 
         const expectation = {
           ...initialState,
-          messageById: {
+          byId: {
             ID123: createMockMessage('ID123'),
             ID456: createMockMessage('ID456'),
             ID789: createMockMessage('ID789'),
             ID101: createMockMessage('ID101'),
           },
-          messageIds: [
+          ids: [
             'ID123',
             'ID456',
             'ID789',
@@ -85,7 +85,7 @@ describe('message', () => {
           ],
         };
 
-        const actual = reducers(previousState, action);
+        const actual = module.reducers(previousState, action);
 
         expect(actual).toEqual(expectation);
       });
@@ -96,14 +96,16 @@ describe('message', () => {
     describe('getMessages', () => {
       it('expect to return an array of messages', () => {
         const state = {
-          messageById: {
-            ID123: createMockMessage('ID123'),
-            ID456: createMockMessage('ID456'),
+          messages: {
+            byId: {
+              ID123: createMockMessage('ID123'),
+              ID456: createMockMessage('ID456'),
+            },
+            ids: [
+              'ID123',
+              'ID456',
+            ],
           },
-          messageIds: [
-            'ID123',
-            'ID456',
-          ],
         };
 
         const expectation = [
