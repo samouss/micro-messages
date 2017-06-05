@@ -1,7 +1,9 @@
 // @flow
 
 import React from 'react';
+import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import configureStore from './store/configureStore';
 import './App.css';
 
 const List = () => (
@@ -12,14 +14,18 @@ const Message = () => (
   <div>view message</div>
 );
 
-const App = () => (
-  <Router>
-    <div>
-      <List />
+const store = configureStore();
 
-      <Route path="/:messageId" component={Message} />
-    </div>
-  </Router>
+const App = () => (
+  <Provider store={store}>
+    <Router>
+      <div>
+        <List />
+
+        <Route path="/:messageId" component={Message} />
+      </div>
+    </Router>
+  </Provider>
 );
 
 export default App;
