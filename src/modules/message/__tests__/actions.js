@@ -2,6 +2,7 @@
 
 import { createMockMessage } from 'test/message';
 import { fetchMessages } from 'core/api';
+import * as ACTION_TYPES from '../actionTypes';
 import * as actions from '../actions';
 
 jest.mock('core/api', () => ({
@@ -24,8 +25,8 @@ describe('message - actions', () => {
       fetchMessages.mockImplementationOnce(() => Promise.resolve(messages));
 
       const expectation = [
-        [{ type: 'FETCH_MESSAGES_REQUEST' }],
-        [{ type: 'FETCH_MESSAGES_SUCCESS', messages }],
+        [{ type: ACTION_TYPES.FETCH_MESSAGES_REQUEST }],
+        [{ type: ACTION_TYPES.FETCH_MESSAGES_SUCCESS, messages }],
       ];
 
 
@@ -43,8 +44,8 @@ describe('message - actions', () => {
       fetchMessages.mockImplementationOnce(() => Promise.reject());
 
       const expectation = [
-        [{ type: 'FETCH_MESSAGES_REQUEST' }],
-        [{ type: 'FETCH_MESSAGES_FAILURE' }],
+        [{ type: ACTION_TYPES.FETCH_MESSAGES_REQUEST }],
+        [{ type: ACTION_TYPES.FETCH_MESSAGES_FAILURE }],
       ];
 
       return actions.fetchMessages()(dispatch).then(() => {
