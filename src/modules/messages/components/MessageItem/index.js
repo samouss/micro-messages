@@ -4,6 +4,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import TimeFromNow from 'components/TimeFromNow';
 import Label from 'components/Label';
+import Paragraphs from 'components/Paragraphs';
 import './index.css';
 
 import type { Message } from '../../types';
@@ -24,7 +25,9 @@ const MessageItem = ({ message }: Props) => (
     >
       <div styleName="MessageItem__Container">
         <div styleName="MessageItem__Preview">
-          {message.body}
+          <Paragraphs
+            text={message.body}
+          />
         </div>
 
         <div styleName="MessageItem__Infos">

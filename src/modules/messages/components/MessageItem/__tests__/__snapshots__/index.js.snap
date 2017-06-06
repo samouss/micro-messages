@@ -19,7 +19,9 @@ exports[`<MessageItem /> expect to render the component correctly 1`] = `
       <div
         styleName="MessageItem__Preview"
       >
-        BODY
+        <Paragraphs
+          text="BODY"
+        />
       </div>
       <div
         styleName="MessageItem__Infos"
