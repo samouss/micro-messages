@@ -1,0 +1,27 @@
+.MessageViewer {
+  flex: 1;
+  padding: 25px;
+}
+
+.MessageViewer__Header {
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.MessageViewer__Row {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.MessageViewer__Row:last-child {
+  margin-bottom: 0;
+}
+
+.MessageViewer__Row__Label {
+  margin-right: 10px;
+}
+
+.MessageViewer__Content {
+
+}

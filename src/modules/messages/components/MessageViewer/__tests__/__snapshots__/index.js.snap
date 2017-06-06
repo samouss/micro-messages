@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MessageViewer /> expect to render the component correctly 1`] = `
+<div
+  styleName="MessageViewer"
+>
+  <div
+    styleName="MessageViewer__Header"
+  >
+    <p
+      styleName="MessageViewer__Row"
+    >
+      <span
+        styleName="MessageViewer__Row__Label"
+      >
+        Reçu le:
+      </span>
+      <TimeFromDate
+        date="DATE"
+      />
+    </p>
+    <p
+      styleName="MessageViewer__Row"
+    >
+      <span
+        styleName="MessageViewer__Row__Label"
+      >
+        Visibilité:
+      </span>
+      <Label
+        type="private"
+      />
+    </p>
+  </div>
+  <div
+    styleName="MessageViewer__Content"
+  >
+    <Paragraphs
+      text="BODY"
+    />
+  </div>
+</div>
+`;
