@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Paragraphs /> expect to render the component correctly 1`] = `
+<p
+  styleName="Paragraphs"
+>
+  Text from Lorem
+</p>
+`;
