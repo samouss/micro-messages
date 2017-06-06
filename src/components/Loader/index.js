@@ -1,11 +1,13 @@
+// @flow
+
 import React from 'react';
 import './index.css';
 
-export default function Spinner() {
-  return (
-    <div styleName="Spinner">
-      <div styleName="Spinner__bounce-1" />
-      <div styleName="Spinner__bounce-2" />
-    </div>
-  );
-}
+const Loader = () => (
+  <div styleName="Loader">
+    <div styleName="Loader__bounce-1" />
+    <div styleName="Loader__bounce-2" />
+  </div>
+);
+
+export default Loader;

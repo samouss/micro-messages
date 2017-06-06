@@ -2,13 +2,13 @@
 
 exports[`<Loader /> expect to render the component correctly 1`] = `
 <div
-  styleName="Spinner"
+  styleName="Loader"
 >
   <div
-    styleName="Spinner__bounce-1"
+    styleName="Loader__bounce-1"
   />
   <div
-    styleName="Spinner__bounce-2"
+    styleName="Loader__bounce-2"
   />
 </div>
 `;
