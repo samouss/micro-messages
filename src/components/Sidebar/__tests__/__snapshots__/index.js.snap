@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Sidebar /> expect to render the component correctly 1`] = `
+<div
+  styleName="container"
+>
+  <div>
+    Some content
+  </div>
+</div>
+`;
