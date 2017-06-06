@@ -34,7 +34,8 @@
     "no-shadow": 0,
     "no-use-before-define": ["error", { "functions": false, "classes": true }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/require-extension": "off",
+    "react/require-extension": 0,
+    "react/require-default-props": 0,
     "react/sort-comp": [1, {
       order: [
         'type-annotations',
