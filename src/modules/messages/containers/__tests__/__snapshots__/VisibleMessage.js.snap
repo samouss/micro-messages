@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<VisibleMessage /> expect to render the component correctly with message 1`] = `
+<MessageViewer
+  message={
+    Object {
+      "body": "BODY",
+      "date": "DATE",
+      "id": "ID1234",
+      "visibility": "private",
+    }
+  }
+/>
+`;
+
+exports[`<VisibleMessage /> expect to render the component correctly without message 1`] = `null`;
