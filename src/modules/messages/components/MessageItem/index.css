@@ -15,7 +15,7 @@
 }
 
 .MessageItem__Preview {
-  /* REMOVE */
+  flex: 1;
   overflow: hidden;
 }
 
