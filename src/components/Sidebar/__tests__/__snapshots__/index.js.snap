@@ -2,7 +2,7 @@
 
 exports[`<Sidebar /> expect to render the component correctly 1`] = `
 <div
-  styleName="container"
+  styleName="Sidebar"
 >
   <div>
     Some content

@@ -8,7 +8,7 @@ type Props = {
 };
 
 const Sidebar = ({ children }: Props) => (
-  <div styleName="container">
+  <div styleName="Sidebar">
     {children}
   </div>
 );
