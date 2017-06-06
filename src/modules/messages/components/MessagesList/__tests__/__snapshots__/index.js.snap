@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MessagesList /> expect to render the component correctly 1`] = `
+<ul>
+  <MessageItem
+    message={
+      Object {
+        "body": "BODY",
+        "date": "DATE",
+        "id": "ID1234",
+        "visibility": "private",
+      }
+    }
+  />
+  <MessageItem
+    message={
+      Object {
+        "body": "BODY",
+        "date": "DATE",
+        "id": "ID5678",
+        "visibility": "private",
+      }
+    }
+  />
+  <MessageItem
+    message={
+      Object {
+        "body": "BODY",
+        "date": "DATE",
+        "id": "ID9101",
+        "visibility": "private",
+      }
+    }
+  />
+</ul>
+`;
