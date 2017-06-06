@@ -1,0 +1,36 @@
+.MessageItem {
+  display: block;
+}
+
+.MessageItem:hover {
+  background-color: #F0F0F0;
+}
+
+.MessageItem__Container {
+  display: flex;
+  flex-direction: row;
+  height: 95px;
+  padding: 5px 8px;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.MessageItem__Preview {
+  /* REMOVE */
+  overflow: hidden;
+}
+
+.MessageItem__Infos {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  align-items: flex-end;
+}
+
+.MessageItem__Infos__Date {
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.MessageItem__Infos__Visibility {
+  margin-top: 6px;
+}

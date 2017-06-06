@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MessageItem /> expect to render the component correctly 1`] = `
+<li>
+  <NavLink
+    activeClassName="active"
+    activeStyle={
+      Object {
+        "backgroundColor": "#0169D9",
+        "color": "#FFFFFF",
+      }
+    }
+    styleName="MessageItem"
+    to="/ID1234"
+  >
+    <div
+      styleName="MessageItem__Container"
+    >
+      <div
+        styleName="MessageItem__Preview"
+      >
+        BODY
+      </div>
+      <div
+        styleName="MessageItem__Infos"
+      >
+        <span
+          styleName="MessageItem__Infos__Date"
+        >
+          <TimeFromDate
+            date="DATE"
+          />
+        </span>
+        <span
+          styleName="MessageItem__Infos__Visibility"
+        >
+          <Label
+            type="private"
+          />
+        </span>
+      </div>
+    </div>
+  </NavLink>
+</li>
+`;
