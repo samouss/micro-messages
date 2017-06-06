@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TimeFromDate /> expect to render the component correctly with date displayed with format 1`] = `
+<span>
+  01/01/2016
+</span>
+`;
+
+exports[`<TimeFromDate /> expect to render the component correctly with date displayed with format from specific threshold 1`] = `
+<span>
+  01/01/2016
+</span>
+`;
+
+exports[`<TimeFromDate /> expect to render the component correctly with date displayed with relative format 1`] = `
+<span>
+  5 days ago
+</span>
+`;
+
+exports[`<TimeFromDate /> expect to render the component correctly with date displayed with specific format 1`] = `
+<span>
+  01-01-2016
+</span>
+`;
+
+exports[`<TimeFromNow /> expect to render the component correctly with date displayed with format 1`] = `
+<span>
+  01/01/2016
+</span>
+`;
+
+exports[`<TimeFromNow /> expect to render the component correctly with date displayed with format from specific threshold 1`] = `
+<span>
+  01/01/2016
+</span>
+`;
+
+exports[`<TimeFromNow /> expect to render the component correctly with date displayed with relative format 1`] = `
+<span>
+  5 days ago
+</span>
+`;
+
+exports[`<TimeFromNow /> expect to render the component correctly with date displayed with specific format 1`] = `
+<span>
+  01-01-2016
+</span>
+`;
