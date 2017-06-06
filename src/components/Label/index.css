@@ -1,0 +1,16 @@
+.Label {
+  border-radius: 5px;
+  padding: 3px 7px;
+  color: #FFF;
+  font-weight: 600;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.Label--Public {
+  background-color: #225378;
+}
+
+.Label--Private {
+  background-color: #DC3522;
+}
