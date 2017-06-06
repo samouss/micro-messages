@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Loader /> expect to render the component correctly 1`] = `
+<div
+  styleName="Spinner"
+>
+  <div
+    styleName="Spinner__bounce-1"
+  />
+  <div
+    styleName="Spinner__bounce-2"
+  />
+</div>
+`;
