@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<VisibleMessagesList /> expect to render the component correctly with Loader on first render 1`] = `<Loader />`;
+
+exports[`<VisibleMessagesList /> expect to render the component correctly with MessagesList 1`] = `
+<MessagesList
+  messages={
+    Array [
+      Object {
+        "body": "BODY",
+        "date": "DATE",
+        "id": "ID1234",
+        "visibility": "private",
+      },
+      Object {
+        "body": "BODY",
+        "date": "DATE",
+        "id": "ID5678",
+        "visibility": "private",
+      },
+      Object {
+        "body": "BODY",
+        "date": "DATE",
+        "id": "ID9101",
+        "visibility": "private",
+      },
+    ]
+  }
+/>
+`;
