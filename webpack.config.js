@@ -8,7 +8,7 @@ const clean = plugins =>
 const JSFilenameIdentifier = '[name].[chunkhash:8].js';
 
 const CSSLoaderLocalIdentifier = isProduction =>
-  (!isProduction ? '[folder]__[local]--[hash:base64:5]' : '[hash:base64]');
+  (!isProduction ? '[local]--[hash:base64:5]' : '[hash:base64]');
 
 const CSSLoaderConfiguration = isProduction => ({
   loader: 'css-loader',
