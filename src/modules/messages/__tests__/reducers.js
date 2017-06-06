@@ -1,6 +1,6 @@
 // @flow
 
-import { createMockMessage } from 'test/message';
+import { createMockMessage } from 'test/messages';
 import reducers, * as selectors from '../reducers';
 
 describe('message', () => {

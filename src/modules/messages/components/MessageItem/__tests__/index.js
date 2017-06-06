@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { shallow } from 'enzyme';
-import { createMockMessage } from 'test/message';
+import { createMockMessage } from 'test/messages';
 import MessageItem from '../index';
 
 import type { Props } from '../index';

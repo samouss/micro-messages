@@ -1,6 +1,6 @@
 // @flow
 
-import { createMockMessage } from 'test/message';
+import { createMockMessage } from 'test/messages';
 import { fetchMessages } from 'core/api';
 import * as ACTION_TYPES from '../actionTypes';
 import * as actions from '../actions';
