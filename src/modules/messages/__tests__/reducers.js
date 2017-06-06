@@ -93,6 +93,43 @@ describe('message', () => {
   });
 
   describe('[selectors]', () => {
+    describe('getMessage', () => {
+      it('expect to return a message', () => {
+        const id = 'ID123';
+
+        const state = {
+          messages: {
+            byId: {
+              [id]: createMockMessage(id),
+            },
+            ids: [
+              id,
+            ],
+          },
+        };
+
+        const expectation = createMockMessage(id);
+        const actual = selectors.getMessage(state, id);
+
+        expect(actual).toEqual(expectation);
+      });
+
+      it('expect to return a undefined', () => {
+        const id = 'ID123';
+
+        const state = {
+          messages: {
+            byId: {},
+            ids: [],
+          },
+        };
+
+        const actual = selectors.getMessage(state, id);
+
+        expect(actual).toBeUndefined();
+      });
+    });
+
     describe('getMessages', () => {
       it('expect to return an array of messages', () => {
         const state = {
@@ -113,6 +150,20 @@ describe('message', () => {
           createMockMessage('ID456'),
         ];
 
+        const actual = selectors.getMessages(state);
+
+        expect(actual).toEqual(expectation);
+      });
+
+      it('expect to return an empty array', () => {
+        const state = {
+          messages: {
+            byId: {},
+            ids: [],
+          },
+        };
+
+        const expectation = [];
         const actual = selectors.getMessages(state);
 
         expect(actual).toEqual(expectation);

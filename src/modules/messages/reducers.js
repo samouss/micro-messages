@@ -43,9 +43,12 @@ export default combineReducers({
 });
 
 const getState = (state: State) => state.messages;
-const getMessageById = (state: State, id: MessageId) => getState(state).byId[id];
 const getMessageIds = (state: State) => getState(state).ids;
 
+export const getMessage = (state: State, id: MessageId) => {
+  return getState(state).byId[id];
+};
+
 export const getMessages = (state: State) => {
-  return getMessageIds(state).map(id => getMessageById(state, id));
+  return getMessageIds(state).map(id => getMessage(state, id));
 };
