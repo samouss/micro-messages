@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Plus /> expect to render the component correctly 1`] = `
+<div
+  className=""
+  styleName="Plus"
+/>
+`;
+
+exports[`<Plus /> expect to render the component with custom className 1`] = `
+<div
+  className="someClass"
+  styleName="Plus"
+/>
+`;
