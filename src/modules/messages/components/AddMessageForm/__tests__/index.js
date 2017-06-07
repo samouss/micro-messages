@@ -139,6 +139,8 @@ describe('<AddMessageForm />', () => {
         />,
       );
 
+      const expectation = true;
+
       component
         .find('form')
         .simulate('submit', {
@@ -147,7 +149,8 @@ describe('<AddMessageForm />', () => {
 
       expect(props.onSubmit).toHaveBeenCalled();
       // $FlowFixMe
-      expect(component.state().isLoading).toBe(true);
+      expect(component.state().isLoading).toBe(expectation);
+      expect(component).toMatchSnapshot();
     });
 
     it('expect to successfully call onSubmit', () => {
