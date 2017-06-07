@@ -1,10 +1,15 @@
 // @flow
 
-import type { Message, MessageId, Visibility } from 'modules/messages/types';
+import type { Message, MessageInput, MessageId, Visibility } from 'modules/messages/types';
 
 export const createMockMessage = (id: MessageId, visibility: Visibility = 'private'): Message => ({
   id,
   visibility,
-  date: 'DATE',
+  date: 'SOME_DATE',
+  body: 'BODY',
+});
+
+export const createMockMessageInput = (visibility: Visibility = 'private'): MessageInput => ({
+  visibility,
   body: 'BODY',
 });
