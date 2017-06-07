@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Overlay /> expect to render the component correctly closed 1`] = `
+<div
+  styleName="Overlay"
+/>
+`;
+
+exports[`<Overlay /> expect to render the component correctly open 1`] = `
+<div
+  styleName="Overlay Overlay--visible"
+/>
+`;

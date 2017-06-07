@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Modal /> expect to render the component correctly closed 1`] = `
+<div
+  styleName="Modal"
+>
+  <Overlay
+    isOpen={false}
+  />
+  <div
+    styleName="Modal__Container"
+  >
+    <div
+      styleName="Modal__Header"
+    >
+      <button
+        onClick={[Function]}
+        styleName="Modal__Header__Close"
+      >
+        X
+      </button>
+    </div>
+    <div
+      styleName="Modal__Content"
+    >
+      <div>
+        some content
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Modal /> expect to render the component correctly open 1`] = `
+<div
+  styleName="Modal"
+>
+  <Overlay
+    isOpen={true}
+  />
+  <div
+    styleName="Modal__Container Modal__Container--visible"
+  >
+    <div
+      styleName="Modal__Header"
+    >
+      <button
+        onClick={[Function]}
+        styleName="Modal__Header__Close"
+      >
+        X
+      </button>
+    </div>
+    <div
+      styleName="Modal__Content"
+    >
+      <div>
+        some content
+      </div>
+    </div>
+  </div>
+</div>
+`;

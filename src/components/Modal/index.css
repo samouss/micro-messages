@@ -1,0 +1,60 @@
+.Modal {
+  position: absolute;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.Modal__Container {
+  background: #FFFFFF;
+  width: 50%;
+  min-width: 250px;
+  max-width: 500px;
+  border-radius: 2px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translate3d(0, 100%, 0);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  transition:
+    visibility 0s 0.25s,
+    transform 0.25s,
+    opacity 0.25s;
+}
+
+.Modal__Container--visible {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+
+.Modal__Header {
+  padding: 10px 10px 0;
+  text-align: right;
+}
+
+.Modal__Header__Close {
+  background: none;
+  border: none;
+  padding: 5px 10px;
+  font-size: 1.5rem;
+}
+
+.Modal__Header__Close:hover {
+  cursor: pointer;
+}
+
+.Modal__Header__Close:focus {
+  outline: none;
+}
+
+.Modal__Content {
+  padding: 25px;
+}
