@@ -3,8 +3,9 @@
 import type { Store as ReduxStore, Dispatch as ReduxDispatch } from 'redux';
 import type { MessageState, MessageAction } from '../modules/messages/types';
 
-export type State =
-  & MessageState;
+export type State = {
+  messages: MessageState,
+};
 
 export type Action =
   | MessageAction;

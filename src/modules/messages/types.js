@@ -21,10 +21,8 @@ export type ByIdState = { [id: MessageId]: Message };
 export type IdsState = Array<MessageId>;
 
 export type MessageState = {
-  +messages: {
-    +byId: ByIdState,
-    +ids: IdsState,
-  },
+  +byId: ByIdState,
+  +ids: IdsState,
 };
 
 export type FetchMessagesRequestAction = { type: 'FETCH_MESSAGES_REQUEST' };
