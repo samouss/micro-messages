@@ -6,23 +6,23 @@ export type MessageBody = string;
 export type Visibility = 'public' | 'private';
 
 export type Message = {
-  +id: MessageId,
-  +date: string,
-  +body: MessageBody,
-  +visibility: Visibility,
+  id: MessageId,
+  date: string,
+  body: MessageBody,
+  visibility: Visibility,
 };
 
 export type MessageInput = {
-  +body: MessageBody,
-  +visibility: Visibility,
+  body: MessageBody,
+  visibility: Visibility,
 };
 
 export type ByIdState = { [id: MessageId]: Message };
 export type IdsState = Array<MessageId>;
 
 export type MessageState = {
-  +byId: ByIdState,
-  +ids: IdsState,
+  byId: ByIdState,
+  ids: IdsState,
 };
 
 export type FetchMessagesRequestAction = { type: 'FETCH_MESSAGES_REQUEST' };
