@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Submit /> expect to render the component correctly 1`] = `
+<button
+  onClick={[Function]}
+  styleName="Submit"
+>
+  <span>
+    some content
+  </span>
+</button>
+`;

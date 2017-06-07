@@ -1,0 +1,10 @@
+.Submit {
+  background: #0169d9;
+  border: 1px solid #225378;
+  color: #FFF;
+  border-radius: 3px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
