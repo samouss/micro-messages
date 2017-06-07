@@ -1,5 +1,5 @@
 .Submit {
-  background: #0169d9;
+  background-color: #0169d9;
   border: 1px solid #225378;
   color: #FFF;
   border-radius: 3px;
@@ -7,4 +7,14 @@
   text-transform: uppercase;
   font-weight: 600;
   font-size: 0.85rem;
+  transition: background-color 0.25s, border-color 0.25s;
+}
+
+.Submit:disabled {
+  background-color: #9d9fa2;
+  border-color: #636e77;
+}
+
+.Submit:disabled:hover {
+  cursor: default;
 }
