@@ -11,7 +11,7 @@
 
 .MessageViewer__Row {
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .MessageViewer__Row:last-child {

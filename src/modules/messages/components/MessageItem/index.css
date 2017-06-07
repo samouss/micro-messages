@@ -9,7 +9,7 @@
 .MessageItem__Container {
   display: flex;
   flex-direction: row;
-  height: 95px;
+  height: 94px;
   padding: 5px 8px;
   border-bottom: 1px solid #E5E5E5;
 }
@@ -17,6 +17,7 @@
 .MessageItem__Preview {
   flex: 1;
   overflow: hidden;
+  font-size: 0.95rem;
 }
 
 .MessageItem__Infos {
