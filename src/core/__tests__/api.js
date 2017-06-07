@@ -1,5 +1,6 @@
 // @flow
 
+import { createMockMessage } from 'test/messages';
 import * as api from '../api';
 
 jest.mock('../../../db.json', () => [
@@ -18,6 +19,19 @@ describe('api', () => {
       ];
 
       return api.fetchMessages().then(res => {
+        expect(res).toEqual(expectation);
+      });
+    });
+  });
+
+  describe('postMessage', () => {
+    it('expect to return the given message', () => {
+      expect.assertions(1);
+
+      const message = createMockMessage('ID1234');
+      const expectation = createMockMessage('ID1234');
+
+      return api.postMessage(message).then(res => {
         expect(res).toEqual(expectation);
       });
     });
