@@ -2,8 +2,9 @@
 
 import React from 'react';
 import cx from 'classnames';
+import Plus from 'components/Plus';
 import Overlay from './Overlay';
-import './index.css';
+import styles from './index.css';
 
 export type Props = {
   isOpen: boolean,
@@ -24,10 +25,12 @@ const Modal = ({ isOpen, onClose, children }: Props) => (
     >
       <div styleName="Modal__Header">
         <button
-          styleName="Modal__Header__Close"
+          styleName="Modal__Header__Button"
           onClick={onClose}
         >
-          X
+          <Plus
+            customClassName={styles.Modal__Header__Close}
+          />
         </button>
       </div>
 

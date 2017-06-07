@@ -1,5 +1,6 @@
 .Modal {
   position: absolute;
+  z-index: 1000;
   visibility: hidden;
   display: flex;
   justify-content: center;
@@ -40,19 +41,17 @@
   text-align: right;
 }
 
-.Modal__Header__Close {
+.Modal__Header__Button {
   background: none;
   border: none;
-  padding: 5px 10px;
-  font-size: 1.5rem;
+  padding: 10px;
+  transform: rotate(45deg);
 }
 
-.Modal__Header__Close:hover {
-  cursor: pointer;
-}
-
-.Modal__Header__Close:focus {
-  outline: none;
+.Modal__Header__Close:before,
+.Modal__Header__Close:after {
+  width: 15px;
+  background-color: #000000;
 }
 
 .Modal__Content {

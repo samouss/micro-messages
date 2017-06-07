@@ -58,7 +58,7 @@ describe('<Modal />', () => {
     );
 
     component
-      .find('[styleName="Modal__Header__Close"]')
+      .find('[styleName="Modal__Header__Button"]')
       .simulate('click');
 
     expect(props.onClose).toHaveBeenCalled();

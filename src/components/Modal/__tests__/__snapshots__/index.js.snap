@@ -15,9 +15,11 @@ exports[`<Modal /> expect to render the component correctly closed 1`] = `
     >
       <button
         onClick={[Function]}
-        styleName="Modal__Header__Close"
+        styleName="Modal__Header__Button"
       >
-        X
+        <Plus
+          customClassName="Modal__Header__Close"
+        />
       </button>
     </div>
     <div
@@ -46,9 +48,11 @@ exports[`<Modal /> expect to render the component correctly open 1`] = `
     >
       <button
         onClick={[Function]}
-        styleName="Modal__Header__Close"
+        styleName="Modal__Header__Button"
       >
-        X
+        <Plus
+          customClassName="Modal__Header__Close"
+        />
       </button>
     </div>
     <div
