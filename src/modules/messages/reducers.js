@@ -2,6 +2,7 @@
 
 import { combineReducers } from 'redux';
 import * as ACTION_TYPES from './actionTypes';
+
 import type { State, Action } from 'store/types';
 import type { MessageId, ByIdState, IdsState } from './types';
 
@@ -18,6 +19,13 @@ const byId = (state = byIdInitialState, action: Action) => {
       };
     }
 
+    case ACTION_TYPES.POST_MESSAGE_SUCCESS: {
+      return {
+        ...state,
+        [action.message.id]: action.message,
+      };
+    }
+
     default: {
       return state;
     }
@@ -29,6 +37,10 @@ const ids = (state = idsInitialState, action: Action) => {
   switch (action.type) {
     case ACTION_TYPES.FETCH_MESSAGES_SUCCESS: {
       return state.concat(action.messages.map(message => message.id));
+    }
+
+    case ACTION_TYPES.POST_MESSAGE_SUCCESS: {
+      return [action.message.id].concat(state);
     }
 
     default: {
