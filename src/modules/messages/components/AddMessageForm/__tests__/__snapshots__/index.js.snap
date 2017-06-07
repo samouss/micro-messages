@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AddMessageForm /> expect to render the component correctly 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <div
+    styleName="AddMessageForm__Row"
+  >
+    <span
+      styleName="AddMessageForm__Row__Label"
+    >
+      Visibilité:
+    </span>
+    <div
+      styleName="AddMessageForm__Row__Radios"
+    >
+      <label
+        htmlFor="public"
+        styleName="AddMessageForm__Row__Radio"
+      >
+        <input
+          checked={true}
+          id="public"
+          name="visibility"
+          onChange={[Function]}
+          required={true}
+          styleName="AddMessageForm__Row__Radio__Input"
+          type="radio"
+          value="public"
+        />
+        <Label
+          type="public"
+        />
+      </label>
+      <label
+        htmlFor="private"
+        styleName="AddMessageForm__Row__Radio"
+      >
+        <input
+          checked={false}
+          id="private"
+          name="visibility"
+          onChange={[Function]}
+          required={true}
+          styleName="AddMessageForm__Row__Radio__Input"
+          type="radio"
+          value="private"
+        />
+        <Label
+          type="private"
+        />
+      </label>
+    </div>
+  </div>
+  <div
+    styleName="AddMessageForm__Row"
+  >
+    <textarea
+      name="body"
+      onChange={[Function]}
+      placeholder="Entrer votre message..."
+      required={true}
+      styleName="AddMessageForm__Row__Textarea"
+      value=""
+    />
+  </div>
+  <div
+    styleName="AddMessageForm__Row"
+  >
+    <Submit>
+      Envoyer
+    </Submit>
+  </div>
+</form>
+`;
+
+exports[`<AddMessageForm /> expect to render the component correctly with body 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <div
+    styleName="AddMessageForm__Row"
+  >
+    <span
+      styleName="AddMessageForm__Row__Label"
+    >
+      Visibilité:
+    </span>
+    <div
+      styleName="AddMessageForm__Row__Radios"
+    >
+      <label
+        htmlFor="public"
+        styleName="AddMessageForm__Row__Radio"
+      >
+        <input
+          checked={true}
+          id="public"
+          name="visibility"
+          onChange={[Function]}
+          required={true}
+          styleName="AddMessageForm__Row__Radio__Input"
+          type="radio"
+          value="public"
+        />
+        <Label
+          type="public"
+        />
+      </label>
+      <label
+        htmlFor="private"
+        styleName="AddMessageForm__Row__Radio"
+      >
+        <input
+          checked={false}
+          id="private"
+          name="visibility"
+          onChange={[Function]}
+          required={true}
+          styleName="AddMessageForm__Row__Radio__Input"
+          type="radio"
+          value="private"
+        />
+        <Label
+          type="private"
+        />
+      </label>
+    </div>
+  </div>
+  <div
+    styleName="AddMessageForm__Row"
+  >
+    <textarea
+      name="body"
+      onChange={[Function]}
+      placeholder="Entrer votre message..."
+      required={true}
+      styleName="AddMessageForm__Row__Textarea"
+      value="Some content"
+    />
+  </div>
+  <div
+    styleName="AddMessageForm__Row"
+  >
+    <Submit>
+      Envoyer
+    </Submit>
+  </div>
+</form>
+`;

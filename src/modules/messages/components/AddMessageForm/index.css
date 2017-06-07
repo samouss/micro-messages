@@ -1,0 +1,53 @@
+.AddMessageForm {
+
+}
+
+.AddMessageForm__Row {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.AddMessageForm__Row:last-child {
+  margin-bottom: 0;
+  justify-content: flex-end;
+}
+
+.AddMessageForm__Row__Label {
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.AddMessageForm__Row__Radios {
+  display: flex;
+}
+
+.AddMessageForm__Row__Radio {
+  display: flex;
+}
+
+.AddMessageForm__Row__Radio:first-child {
+  margin-right: 10px;
+}
+
+.AddMessageForm__Row__Radio:hover {
+  cursor: pointer;
+}
+
+.AddMessageForm__Row__Radio__Input {
+  margin-right: 5px;
+}
+
+.AddMessageForm__Row__Textarea {
+  font-size: 0.9rem;
+  border: 1px solid #E5E5E5;
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  transition: border-color 0.25s;
+  resize: none;
+}
+
+.AddMessageForm__Row__Textarea:focus {
+  outline: none;
+  border-color: #0169d9;
+}
