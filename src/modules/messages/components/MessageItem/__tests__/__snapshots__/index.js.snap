@@ -30,7 +30,7 @@ exports[`<MessageItem /> expect to render the component correctly 1`] = `
           styleName="MessageItem__Infos__Date"
         >
           <TimeFromDate
-            date="DATE"
+            date="SOME_DATE"
           />
         </span>
         <span

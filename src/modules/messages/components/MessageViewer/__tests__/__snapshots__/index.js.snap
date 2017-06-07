@@ -16,7 +16,7 @@ exports[`<MessageViewer /> expect to render the component correctly 1`] = `
         Reçu le:
       </span>
       <TimeFromDate
-        date="DATE"
+        date="SOME_DATE"
       />
     </p>
     <p

@@ -8,19 +8,19 @@ exports[`<VisibleMessagesList /> expect to render the component correctly with M
     Array [
       Object {
         "body": "BODY",
-        "date": "DATE",
+        "date": "SOME_DATE",
         "id": "ID1234",
         "visibility": "private",
       },
       Object {
         "body": "BODY",
-        "date": "DATE",
+        "date": "SOME_DATE",
         "id": "ID5678",
         "visibility": "private",
       },
       Object {
         "body": "BODY",
-        "date": "DATE",
+        "date": "SOME_DATE",
         "id": "ID9101",
         "visibility": "private",
       },
