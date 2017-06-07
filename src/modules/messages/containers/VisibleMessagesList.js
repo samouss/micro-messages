@@ -26,7 +26,7 @@ type ComponentState = {
 export class VisibleMessagesList extends Component {
   static defaultProps: DefaultProps;
   props: Props;
-  state: ComponentState
+  state: ComponentState;
 
   constructor(props: Props) {
     super(props);
