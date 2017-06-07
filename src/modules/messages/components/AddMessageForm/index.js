@@ -8,10 +8,12 @@ import './index.css';
 import type { MessageInput, Visibility } from '../../types';
 
 export type Props = {
-  onSubmit: MessageInput => void,
+  onSubmit: MessageInput => Promise<void>,
 };
 
-export type State = MessageInput;
+export type State = MessageInput & {
+  isLoading: boolean,
+};
 
 class AddMessageForm extends Component {
   props: Props;
@@ -24,6 +26,7 @@ class AddMessageForm extends Component {
     super(props);
 
     this.state = {
+      isLoading: false,
       body: '',
       visibility: 'public',
     };
@@ -41,11 +44,24 @@ class AddMessageForm extends Component {
   onSubmit(event: Event) {
     event.preventDefault();
 
-    this.props.onSubmit(this.state);
+    this.setState({ isLoading: true });
+
+    return this.props.onSubmit({
+      body: this.state.body,
+      visibility: this.state.visibility,
+    }).then(() => {
+      this.setState({
+        isLoading: false,
+        body: '',
+        visibility: 'public',
+      });
+    }).catch(() => {
+      this.setState({ isLoading: false });
+    });
   }
 
   render() {
-    const { body, visibility } = this.state;
+    const { isLoading, body, visibility } = this.state;
 
     return (
       <form onSubmit={this.onSubmit}>
@@ -89,7 +105,9 @@ class AddMessageForm extends Component {
         </div>
 
         <div styleName="AddMessageForm__Row">
-          <SubmitButton>
+          <SubmitButton
+            disabled={isLoading}
+          >
             Envoyer
           </SubmitButton>
         </div>

@@ -42,7 +42,9 @@ export class VisibleMessagesList extends Component {
 
   fetchMessages() {
     return this.props.fetchMessages().then(() => {
-      this.setState({ isLoading: !this.state.isLoading });
+      this.setState({ isLoading: false });
+    }).catch(() => {
+      this.setState({ isLoading: false });
     });
   }
 

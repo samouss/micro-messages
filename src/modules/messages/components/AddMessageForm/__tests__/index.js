@@ -4,11 +4,11 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import AddMessageForm from '../index';
 
-import type { Props } from '../index';
+import type { Props, State } from '../index';
 
 describe('<AddMessageForm />', () => {
   const defaultProps: Props = {
-    onSubmit: () => {},
+    onSubmit: () => Promise.resolve(),
   };
 
   it('expect to render the component correctly', () => {
@@ -49,8 +49,16 @@ describe('<AddMessageForm />', () => {
       };
 
       const expectation = {
-        before: { visibility: 'public', body: '' },
-        after: { visibility: 'private', body: '' },
+        before: {
+          isLoading: false,
+          visibility: 'public',
+          body: '',
+        },
+        after: {
+          isLoading: false,
+          visibility: 'private',
+          body: '',
+        },
       };
 
       const component = shallow(
@@ -82,8 +90,16 @@ describe('<AddMessageForm />', () => {
       };
 
       const expectation = {
-        before: { visibility: 'public', body: '' },
-        after: { visibility: 'public', body: 'Some text' },
+        before: {
+          isLoading: false,
+          visibility: 'public',
+          body: '',
+        },
+        after: {
+          isLoading: false,
+          visibility: 'public',
+          body: 'Some text',
+        },
       };
 
       const component = shallow(
@@ -111,13 +127,11 @@ describe('<AddMessageForm />', () => {
   });
 
   describe('onSubmit', () => {
-    it('expect to call onSubmit on form submit', () => {
+    it('expect to call onSubmit when form is submitted', () => {
       const props: Props = {
         ...defaultProps,
-        onSubmit: jest.fn(),
+        onSubmit: jest.fn(() => Promise.resolve()),
       };
-
-      const preventDefault = jest.fn();
 
       const component = shallow(
         <AddMessageForm
@@ -127,14 +141,91 @@ describe('<AddMessageForm />', () => {
 
       component
         .find('form')
-        .first()
         .simulate('submit', {
-          preventDefault,
+          preventDefault: () => {},
         });
 
-      expect(preventDefault).toHaveBeenCalled();
+      expect(props.onSubmit).toHaveBeenCalled();
       // $FlowFixMe
-      expect(props.onSubmit).toHaveBeenCalledWith(component.state());
+      expect(component.state().isLoading).toBe(true);
+    });
+
+    it('expect to successfully call onSubmit', () => {
+      expect.assertions(3);
+
+      const preventDefault = jest.fn();
+
+      const props: Props = {
+        ...defaultProps,
+        onSubmit: jest.fn(() => Promise.resolve()),
+      };
+
+      const nextState = {
+        visibility: 'private',
+        body: 'Some content',
+      };
+
+      const expectation: State = {
+        isLoading: false,
+        visibility: 'public',
+        body: '',
+      };
+
+      const component = shallow(
+        <AddMessageForm
+          {...props}
+        />,
+      );
+
+      // $FlowFixMe
+      component.setState(nextState);
+
+      // $FlowFixMe
+      return component.instance().onSubmit({ preventDefault }).then(() => {
+        expect(preventDefault).toHaveBeenCalled();
+        expect(props.onSubmit).toHaveBeenCalledWith(nextState);
+        // $FlowFixMe
+        expect(component.state()).toEqual(expectation);
+      });
+    });
+
+    it('expect to fail to call onSubmit', () => {
+      expect.assertions(3);
+
+      const preventDefault = jest.fn();
+
+      const props: Props = {
+        ...defaultProps,
+        onSubmit: jest.fn(() => Promise.reject()),
+      };
+
+      const nextState = {
+        visibility: 'private',
+        body: 'Some content',
+      };
+
+      const expectation: State = {
+        isLoading: false,
+        visibility: 'private',
+        body: 'Some content',
+      };
+
+      const component = shallow(
+        <AddMessageForm
+          {...props}
+        />,
+      );
+
+      // $FlowFixMe
+      component.setState(nextState);
+
+      // $FlowFixMe
+      return component.instance().onSubmit({ preventDefault }).then(() => {
+        expect(preventDefault).toHaveBeenCalled();
+        expect(props.onSubmit).toHaveBeenCalledWith(nextState);
+        // $FlowFixMe
+        expect(component.state()).toEqual(expectation);
+      });
     });
   });
 });
