@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AddMessageButton /> expect to render the component correctly 1`] = `
+<div
+  styleName="AddMessageButton"
+>
+  <Circle
+    onClick={[Function]}
+  >
+    <Plus />
+  </Circle>
+</div>
+`;
