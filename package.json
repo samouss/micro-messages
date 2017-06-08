@@ -44,7 +44,7 @@
     "eslint-plugin-jest": "20.0.3",
     "eslint-plugin-jsx-a11y": "5.0.3",
     "eslint-plugin-react": "7.0.1",
-    "extract-text-webpack-plugin": "2.1.0",
+    "extract-text-webpack-plugin": "2.1.2",
     "faker": "4.1.0",
     "flow-bin": "0.47.0",
     "html-loader": "0.4.5",
@@ -54,7 +54,7 @@
     "lodash": "4.17.4",
     "postcss-loader": "2.0.5",
     "react-test-renderer": "15.5.4",
-    "style-loader": "0.18.1",
+    "style-loader": "0.18.2",
     "webpack": "2.6.1",
     "webpack-dev-server": "2.4.5"
   },
