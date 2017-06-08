@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Loader from 'components/Loader';
 import { fetchMessages } from '../actions';
-import { getMessages } from '../reducers';
+import { getVisibilityFilter, getMessagesWithVisibilityFilter } from '../reducers';
 import MessagesList from '../components/MessagesList';
 
 import type { State, Dispatch } from 'store/types';
@@ -66,7 +66,7 @@ VisibleMessagesList.defaultProps = {
 };
 
 const mapStateToProps = (state: State) => ({
-  messages: getMessages(state),
+  messages: getMessagesWithVisibilityFilter(state, getVisibilityFilter(state)),
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({

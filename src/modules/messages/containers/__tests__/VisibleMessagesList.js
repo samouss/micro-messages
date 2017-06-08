@@ -4,13 +4,14 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { createMockMessage } from 'test/messages';
 import { createMockStore } from 'test/store';
-import { getMessages } from '../../reducers';
+import { getMessagesWithVisibilityFilter, getVisibilityFilter } from '../../reducers';
 import Connect, { VisibleMessagesList } from '../VisibleMessagesList';
 
 import type { Props } from '../VisibleMessagesList';
 
 jest.mock('../../reducers', () => ({
-  getMessages: jest.fn(state => state),
+  getMessagesWithVisibilityFilter: jest.fn(state => state),
+  getVisibilityFilter: jest.fn(filter => filter),
 }));
 
 jest.mock('../../actions', () => ({
@@ -124,7 +125,8 @@ describe('<VisibleMessagesList />', () => {
         { context },
       );
 
-      expect(getMessages).toHaveBeenCalledWith(state);
+      expect(getMessagesWithVisibilityFilter).toHaveBeenCalledWith(state, state);
+      expect(getVisibilityFilter).toHaveBeenCalledWith(state);
     });
   });
 
