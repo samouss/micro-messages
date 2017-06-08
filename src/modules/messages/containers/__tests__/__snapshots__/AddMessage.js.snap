@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AddMessage /> expect to render the component correctly 1`] = `
+<div>
+  <Modal
+    isOpen={false}
+    onClose={[Function]}
+  >
+    <AddMessageForm
+      onSubmit={[Function]}
+    />
+  </Modal>
+  <AddMessageButton
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`<AddMessage /> toggleModal expect to close modal on AddMessageButton click 1`] = `
+<div>
+  <Modal
+    isOpen={false}
+    onClose={[Function]}
+  >
+    <AddMessageForm
+      onSubmit={[Function]}
+    />
+  </Modal>
+  <AddMessageButton
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`<AddMessage /> toggleModal expect to open modal on AddMessageButton click 1`] = `
+<div>
+  <Modal
+    isOpen={true}
+    onClose={[Function]}
+  >
+    <AddMessageForm
+      onSubmit={[Function]}
+    />
+  </Modal>
+  <AddMessageButton
+    onClick={[Function]}
+  />
+</div>
+`;
