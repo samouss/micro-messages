@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Radio /> expect to render the component correctly 1`] = `
+<label
+  styleName="Radio"
+>
+  <input
+    onChange={[Function]}
+    styleName="Radio__Input"
+    type="radio"
+    value="visible"
+  />
+  <span>
+    some content
+  </span>
+</label>
+`;

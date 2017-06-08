@@ -1,0 +1,15 @@
+.Radio {
+  display: flex;
+}
+
+.Radio:first-child {
+  margin-right: 10px;
+}
+
+.Radio:hover {
+  cursor: pointer;
+}
+
+.Radio__Input {
+  margin-right: 5px;
+}
