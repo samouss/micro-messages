@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FiltersMessageForm /> expect to render the component correctly 1`] = `
+<form
+  styleName="FiltersMessageForm"
+>
+  <span
+    styleName="FiltersMessageForm__Label"
+  >
+    Visibilité:
+  </span>
+  <Group>
+    <Radio
+      checked={true}
+      id="all"
+      name="visibility"
+      onChange={[Function]}
+      value="all"
+    >
+      Tout
+    </Radio>
+    <Radio
+      checked={false}
+      id="public"
+      name="visibility"
+      onChange={[Function]}
+      value="public"
+    >
+      <Label
+        type="public"
+      />
+    </Radio>
+    <Radio
+      checked={false}
+      id="private"
+      name="visibility"
+      onChange={[Function]}
+      value="private"
+    >
+      <Label
+        type="private"
+      />
+    </Radio>
+  </Group>
+</form>
+`;
+
+exports[`<FiltersMessageForm /> expect to render the component correctly with public selected 1`] = `
+<form
+  styleName="FiltersMessageForm"
+>
+  <span
+    styleName="FiltersMessageForm__Label"
+  >
+    Visibilité:
+  </span>
+  <Group>
+    <Radio
+      checked={false}
+      id="all"
+      name="visibility"
+      onChange={[Function]}
+      value="all"
+    >
+      Tout
+    </Radio>
+    <Radio
+      checked={true}
+      id="public"
+      name="visibility"
+      onChange={[Function]}
+      value="public"
+    >
+      <Label
+        type="public"
+      />
+    </Radio>
+    <Radio
+      checked={false}
+      id="private"
+      name="visibility"
+      onChange={[Function]}
+      value="private"
+    >
+      <Label
+        type="private"
+      />
+    </Radio>
+  </Group>
+</form>
+`;

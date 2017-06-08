@@ -1,0 +1,13 @@
+.FiltersMessageForm {
+  position: fixed;
+  display: flex;
+  background-color: #D7D7D7;
+  width: inherit;
+  padding: 8px 10px;
+  border-bottom: 1px solid #949494;
+}
+
+.FiltersMessageForm__Label {
+  font-weight: 600;
+  margin-right: 10px;
+}
