@@ -12,39 +12,46 @@ export type Props = {
   onChange: VisibilityFilter => void,
 }
 
-const FiltersMessageForm = ({ visibility, onChange }: Props) => (
-  <form styleName="FiltersMessageForm">
-    <span styleName="FiltersMessageForm__Label">
-      Visibilité:
-    </span>
+const FiltersMessageForm = ({ visibility, onChange }: Props) => {
+  const onRadioChange = (event: Event & { currentTarget: HTMLInputElement }) => {
+    // $FlowFixMe
+    onChange(event.currentTarget.value);
+  };
 
-    <GroupInput>
-      <RadioInput
-        id="all"
-        name="visibility"
-        onChange={onChange}
-        value="all"
-        checked={visibility === 'all'}
-      >
-        Tout
-      </RadioInput>
+  return (
+    <form styleName="FiltersMessageForm">
+      <span styleName="FiltersMessageForm__Label">
+        Visibilité:
+      </span>
 
-      {(['public', 'private']: Array<Visibility>).map(current => (
+      <GroupInput>
         <RadioInput
-          key={current}
-          id={current}
+          id="all"
           name="visibility"
-          onChange={onChange}
-          value={current}
-          checked={visibility === current}
+          onChange={onRadioChange}
+          value="all"
+          checked={visibility === 'all'}
         >
-          <Label
-            type={current}
-          />
+          Tout
         </RadioInput>
-      ))}
-    </GroupInput>
-  </form>
-);
+
+        {(['public', 'private']: Array<Visibility>).map(current => (
+          <RadioInput
+            key={current}
+            id={current}
+            name="visibility"
+            onChange={onRadioChange}
+            value={current}
+            checked={visibility === current}
+          >
+            <Label
+              type={current}
+            />
+          </RadioInput>
+        ))}
+      </GroupInput>
+    </form>
+  );
+};
 
 export default FiltersMessageForm;

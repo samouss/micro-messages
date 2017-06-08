@@ -56,13 +56,22 @@ describe('<FiltersMessageForm />', () => {
     component
       .find('Radio')
       .first()
-      .simulate('change');
+      .simulate('change', {
+        currentTarget: {
+          value: 'all',
+        },
+      });
 
     component
       .find('Radio')
       .at(1)
-      .simulate('change');
+      .simulate('change', {
+        currentTarget: {
+          value: 'public',
+        },
+      });
 
-    expect(props.onChange).toHaveBeenCalledTimes(2);
+    expect(props.onChange.mock.calls[0][0]).toBe('all');
+    expect(props.onChange.mock.calls[1][0]).toBe('public');
   });
 });
