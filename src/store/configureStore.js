@@ -1,7 +1,6 @@
 // @flow
 
 import { createStore, applyMiddleware } from 'redux';
-import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 import reducer from './rootReducer';
 
@@ -11,6 +10,10 @@ const configureStore = (): Store => {
   const middlewares = [thunk];
 
   if (process.env.NODE_ENV !== 'production') {
+    // @NOTE: use require avoid to turn configureStore into
+    // a Promise (dynamic import())
+    const { createLogger } = require('redux-logger');
+
     middlewares.push(createLogger());
   }
 
