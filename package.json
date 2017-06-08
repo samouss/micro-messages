@@ -4,8 +4,11 @@
   "description": "Webpack React Starter with Babel, ESLint, Mocha, Chai, Sinon, Enzyme",
   "scripts": {
     "clean": "rm -rf dist",
-    "start": "npm run clean && node_modules/.bin/webpack-dev-server --inline --no-info",
-    "build": "npm run clean && node_modules/.bin/webpack --env.production --progress",
+    "start": "npm run build && node dist/server.js",
+    "start:dev": "npm run clean && node_modules/.bin/webpack-dev-server --inline --no-info",
+    "build": "npm run clean && npm run build:client && npm run build:server",
+    "build:client": "node_modules/.bin/webpack --env.production --progress",
+    "build:server": "node_modules/.bin/babel src/server.js --out-file dist/server.js",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "flow": "flow"
@@ -19,6 +22,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "babel-cli": "6.24.1",
     "babel-core": "6.24.1",
     "babel-eslint": "7.2.3",
     "babel-loader": "7.0.0",
@@ -56,6 +60,7 @@
   },
   "dependencies": {
     "classnames": "2.2.5",
+    "express": "4.15.3",
     "moment": "2.18.1",
     "react": "15.5.4",
     "react-dom": "15.5.4",
