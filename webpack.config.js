@@ -83,6 +83,8 @@ module.exports = (options = {}) => {
       new webpack.NamedModulesPlugin(),
       new webpack.NamedChunksPlugin(),
 
+      new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+
       new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',
         filename: JSFilenameIdentifier,
