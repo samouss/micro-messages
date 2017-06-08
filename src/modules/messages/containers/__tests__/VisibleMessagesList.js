@@ -3,11 +3,27 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { createMockMessage } from 'test/messages';
-import { VisibleMessagesList } from '../VisibleMessagesList';
+import { createMockStore } from 'test/store';
+import { getMessages } from '../../reducers';
+import Connect, { VisibleMessagesList } from '../VisibleMessagesList';
 
 import type { Props } from '../VisibleMessagesList';
 
+jest.mock('../../reducers', () => ({
+  getMessages: jest.fn(state => state),
+}));
+
+jest.mock('../../actions', () => ({
+  fetchMessages: jest.fn(() => ({
+    type: 'FETCH_MESSAGES',
+  })),
+}));
+
 describe('<VisibleMessagesList />', () => {
+  const createContext = state => ({
+    store: createMockStore(state),
+  });
+
   const defaultProps = {
     messages: [
       createMockMessage('ID1234'),
@@ -48,51 +64,85 @@ describe('<VisibleMessagesList />', () => {
     expect(component).toMatchSnapshot();
   });
 
-  it('expect to call fetchMessages on didMount', () => {
-    const props: Props = {
-      ...defaultProps,
-      fetchMessages: jest.fn(() => Promise.resolve()),
-    };
+  describe('fetchMessages', () => {
+    it('expect to call fetchMessages on didMount', () => {
+      const props: Props = {
+        ...defaultProps,
+        fetchMessages: jest.fn(() => Promise.resolve()),
+      };
 
-    const component = shallow(
-      <VisibleMessagesList
-        {...props}
-      />,
-    );
+      const component = shallow(
+        <VisibleMessagesList
+          {...props}
+        />,
+      );
 
-    // $FlowFixMe
-    component.instance().componentDidMount();
+      // $FlowFixMe
+      component.instance().componentDidMount();
 
-    expect(props.fetchMessages).toHaveBeenCalled();
+      expect(props.fetchMessages).toHaveBeenCalled();
+    });
+
+    it('expect to call fetchMessages and setState', () => {
+      expect.assertions(3);
+
+      const props: Props = {
+        ...defaultProps,
+        fetchMessages: jest.fn(() => Promise.resolve()),
+      };
+
+      const expectation = {
+        before: { isLoading: true },
+        after: { isLoading: false },
+      };
+
+      const component = shallow(
+        <VisibleMessagesList
+          {...props}
+        />,
+      );
+
+      // $FlowFixMe
+      expect(component.state()).toEqual(expectation.before);
+
+      // $FlowFixMe
+      return component.instance().fetchMessages().then(() => {
+        expect(props.fetchMessages).toHaveBeenCalled();
+        // $FlowFixMe
+        expect(component.state()).toEqual(expectation.after);
+      });
+    });
   });
 
-  it('expect to call fetchMessages and setState', () => {
-    expect.assertions(3);
+  describe('mapStateToProps', () => {
+    it('expect to call getMessages', () => {
+      const state = { messages: [] };
+      const context = createContext(state);
 
-    const props: Props = {
-      ...defaultProps,
-      fetchMessages: jest.fn(() => Promise.resolve()),
-    };
+      shallow(
+        <Connect />,
+        { context },
+      );
 
-    const expectation = {
-      before: { isLoading: true },
-      after: { isLoading: false },
-    };
+      expect(getMessages).toHaveBeenCalledWith(state);
+    });
+  });
 
-    const component = shallow(
-      <VisibleMessagesList
-        {...props}
-      />,
-    );
+  describe('mapDispatchToProps', () => {
+    it('expect to bind fetchMessages', () => {
+      const context = createContext();
 
-    // $FlowFixMe
-    expect(component.state()).toEqual(expectation.before);
+      const component = shallow(
+        <Connect />,
+        { context },
+      );
 
-    // $FlowFixMe
-    return component.instance().fetchMessages().then(() => {
-      expect(props.fetchMessages).toHaveBeenCalled();
       // $FlowFixMe
-      expect(component.state()).toEqual(expectation.after);
+      component.props().fetchMessages();
+
+      expect(context.store.dispatch).toHaveBeenCalledWith({
+        type: 'FETCH_MESSAGES',
+      });
     });
   });
 });
