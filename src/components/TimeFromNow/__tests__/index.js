@@ -111,7 +111,7 @@ describe('<TimeFromNow />', () => {
 
     expect(moment).toHaveBeenCalledWith(props.date);
     expect(moment().diff).toHaveBeenCalledWith(props.date, 'days');
-    expect(moment().fromNow).toHaveBeenCalledWith(true);
+    expect(moment().fromNow).toHaveBeenCalled();
     expect(component).toMatchSnapshot();
   });
 });

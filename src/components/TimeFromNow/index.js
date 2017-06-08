@@ -12,7 +12,7 @@ export type Props = {
 const TimeFromDate = ({ date, threshold = 7, format = 'DD/MM/YYYY' }: Props) => {
   const diff = moment().diff(date, 'days');
   const time = diff >= threshold ? moment(date).format(format)
-    : moment(date).fromNow(true);
+    : moment(date).fromNow();
 
   return (
     <span>{time}</span>
