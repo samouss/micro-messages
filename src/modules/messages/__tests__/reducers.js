@@ -277,6 +277,84 @@ describe('message', () => {
       });
     });
 
+    describe('getMessagesWithVisibilityFilter', () => {
+      it('expect to return an array of all messages', () => {
+        const filter = 'all';
+        const state = {
+          messages: {
+            byId: {
+              ID123: createMockMessage('ID123', 'private'),
+              ID456: createMockMessage('ID456', 'public'),
+            },
+            ids: [
+              'ID123',
+              'ID456',
+            ],
+            visibilityFilter: filter,
+          },
+        };
+
+        const expectation = [
+          createMockMessage('ID123', 'private'),
+          createMockMessage('ID456', 'public'),
+        ];
+
+        const actual = selectors.getMessagesWithVisibilityFilter(state, filter);
+
+        expect(actual).toEqual(expectation);
+      });
+
+      it('expect to return an array of public messages', () => {
+        const filter = 'public';
+        const state = {
+          messages: {
+            byId: {
+              ID123: createMockMessage('ID123', 'private'),
+              ID456: createMockMessage('ID456', 'public'),
+            },
+            ids: [
+              'ID123',
+              'ID456',
+            ],
+            visibilityFilter: filter,
+          },
+        };
+
+        const expectation = [
+          createMockMessage('ID456', 'public'),
+        ];
+
+        const actual = selectors.getMessagesWithVisibilityFilter(state, filter);
+
+        expect(actual).toEqual(expectation);
+      });
+
+      it('expect to return an array of private messages', () => {
+        const filter = 'private';
+        const state = {
+          messages: {
+            byId: {
+              ID123: createMockMessage('ID123', 'private'),
+              ID456: createMockMessage('ID456', 'public'),
+            },
+            ids: [
+              'ID123',
+              'ID456',
+            ],
+            visibilityFilter: filter,
+          },
+        };
+
+        const expectation = [
+          createMockMessage('ID123', 'private'),
+        ];
+
+        const actual = selectors.getMessagesWithVisibilityFilter(state, filter);
+
+        expect(actual).toEqual(expectation);
+      });
+    });
+
     describe('getVisibilityFilter', () => {
       it('expect to return the visibility filter', () => {
         const state = {

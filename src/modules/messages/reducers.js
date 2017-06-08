@@ -79,6 +79,12 @@ export const getMessages = (state: State) => {
   return getMessageIds(state).map(id => getMessage(state, id));
 };
 
+export const getMessagesWithVisibilityFilter = (state: State, visibility: VisibilityFilterState) => {
+  return getMessages(state).filter(message => {
+    return (visibility !== 'all') ? message.visibility === visibility : true;
+  });
+};
+
 export const getVisibilityFilter = (state: State) => {
   return getState(state).visibilityFilter;
 };
