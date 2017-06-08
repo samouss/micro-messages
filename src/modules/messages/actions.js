@@ -9,12 +9,14 @@ import type { Dispatch } from 'store/types';
 import type {
   Message,
   MessageInput,
+  VisibilityFilter,
   FetchMessagesRequestAction,
   FetchMessagesSuccessAction,
   FetchMessagesFailureAction,
   PostMessageRequestAction,
   PostMessageSuccessAction,
   PostMessageFailureAction,
+  ChangeVisibilityFilterAction,
 } from './types';
 
 const fetchMessagesRequest = (): FetchMessagesRequestAction => ({
@@ -69,3 +71,8 @@ export const postMessage = (input: MessageInput) => (dispatch: Dispatch) => {
     dispatch(postMessageFailure());
   });
 };
+
+export const changeVisibilityFilter = (filter: VisibilityFilter): ChangeVisibilityFilterAction => ({
+  type: ACTION_TYPES.CHANGE_VISIBILITY_FILTER,
+  filter,
+});

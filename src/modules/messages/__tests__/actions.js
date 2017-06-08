@@ -106,4 +106,19 @@ describe('message - actions', () => {
       });
     });
   });
+
+  describe('changeVisibilityFilter', () => {
+    it('expect to return a visibility filter action', () => {
+      const filter = 'public';
+
+      const expectation = {
+        type: ACTION_TYPES.CHANGE_VISIBILITY_FILTER,
+        filter,
+      };
+
+      const actual = actions.changeVisibilityFilter(filter);
+
+      expect(actual).toEqual(expectation);
+    });
+  });
 });

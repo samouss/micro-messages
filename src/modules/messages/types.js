@@ -35,6 +35,8 @@ export type PostMessageRequestAction = { type: 'POST_MESSAGE_REQUEST', message: 
 export type PostMessageSuccessAction = { type: 'POST_MESSAGE_SUCCESS', message: Message };
 export type PostMessageFailureAction = { type: 'POST_MESSAGE_FAILURE' };
 
+export type ChangeVisibilityFilterAction = { type: 'CHANGE_VISIBILITY_FILTER', filter: VisibilityFilter };
+
 export type MessageAction =
   | FetchMessagesRequestAction
   | FetchMessagesSuccessAction
@@ -42,4 +44,6 @@ export type MessageAction =
 
   | PostMessageRequestAction
   | PostMessageSuccessAction
-  | PostMessageFailureAction;
+  | PostMessageFailureAction
+
+  | ChangeVisibilityFilterAction;
