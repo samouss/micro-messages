@@ -4,7 +4,7 @@
 
 Micro Messages is built with React, Redux, Flow, Webpack 2, Babel, ESLint, CSS Modules, Jest, Enzyme.
 
-[Live exemple: micro-messages.herokuapp.com](https://micro-messages.herokuapp.com) (it's a free dyno so be patient for the boot time 🙂)
+[Live exemple: micro-messages-app.herokuapp.com](https://micro-messages-app.herokuapp.com) (it's a free dyno so be patient for the boot time 🙂)
 
 ## Installation
 
