@@ -9,12 +9,9 @@ type Props = {
 };
 
 const Radio = ({ id, children, ...props }: Props) => (
-  <label
-    htmlFor={id}
-    styleName="Radio"
-  >
+  // eslint-disable-next-line jsx-a11y/label-has-for
+  <label styleName="Radio">
     <input
-      id={id}
       styleName="Radio__Input"
       type="radio"
       {...props}

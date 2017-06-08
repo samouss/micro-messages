@@ -6,6 +6,7 @@ import Radio from '../index';
 
 describe('<Radio />', () => {
   const defaultProps = {
+    id: 'input',
     value: 'visible',
     onChange: () => {},
   };
