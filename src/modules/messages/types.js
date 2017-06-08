@@ -21,10 +21,12 @@ export type MessageInput = {
 
 export type ByIdState = { [id: MessageId]: Message };
 export type IdsState = Array<MessageId>;
+export type VisibilityFilterState = VisibilityFilter;
 
 export type MessageState = {
   byId: ByIdState,
   ids: IdsState,
+  VisibilityFilter: VisibilityFilterState,
 };
 
 export type FetchMessagesRequestAction = { type: 'FETCH_MESSAGES_REQUEST' };

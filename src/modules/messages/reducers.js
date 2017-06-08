@@ -4,7 +4,7 @@ import { combineReducers } from 'redux';
 import * as ACTION_TYPES from './actionTypes';
 
 import type { State, Action } from 'store/types';
-import type { MessageId, ByIdState, IdsState } from './types';
+import type { MessageId, ByIdState, IdsState, VisibilityFilterState } from './types';
 
 const byIdInitialState: ByIdState = {};
 const byId = (state = byIdInitialState, action: Action) => {
@@ -49,9 +49,23 @@ const ids = (state = idsInitialState, action: Action) => {
   }
 };
 
+const visibilityFilterInitialState: VisibilityFilterState = 'all';
+const visibilityFilter = (state = visibilityFilterInitialState, action: Action) => {
+  switch (action.type) {
+    case ACTION_TYPES.CHANGE_VISIBILITY_FILTER: {
+      return action.filter;
+    }
+
+    default: {
+      return state;
+    }
+  }
+};
+
 export default combineReducers({
   byId,
   ids,
+  visibilityFilter,
 });
 
 const getState = (state: State) => state.messages;

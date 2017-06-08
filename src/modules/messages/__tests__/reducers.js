@@ -11,6 +11,7 @@ describe('message', () => {
     const initialState: MessageState = {
       byId: {},
       ids: [],
+      visibilityFilter: 'all',
     };
 
     it('expect to return the initial state', () => {
@@ -147,6 +148,45 @@ describe('message', () => {
             'ID123',
             'ID456',
           ],
+        };
+
+        const actual = reducers(previousState, action);
+
+        expect(actual).toEqual(expectation);
+      });
+    });
+
+    describe('CHANGE_VISIBILITY_FILTER', () => {
+      const type = 'CHANGE_VISIBILITY_FILTER';
+
+      it('expect to return next state from empty state', () => {
+        const filter = 'public';
+        const previousState = undefined;
+        const action: MessageAction = { type, filter };
+
+        const expectation = {
+          ...initialState,
+          visibilityFilter: filter,
+        };
+
+        const actual = reducers(previousState, action);
+
+        expect(actual).toEqual(expectation);
+      });
+
+      it('expect to return next state from non empty state', () => {
+        const filter = 'private';
+        const previousState: MessageState = {
+          ...initialState,
+          visibilityFilter: 'public',
+
+        };
+
+        const action: MessageAction = { type, filter };
+
+        const expectation = {
+          ...initialState,
+          visibilityFilter: filter,
         };
 
         const actual = reducers(previousState, action);
