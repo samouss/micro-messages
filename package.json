@@ -7,7 +7,7 @@
     "start": "npm run build && node dist/server.js",
     "start:dev": "npm run clean && node_modules/.bin/webpack-dev-server --inline --no-info",
     "build": "npm run clean && npm run build:client && npm run build:server",
-    "build:client": "node_modules/.bin/webpack --env.production --progress",
+    "build:client": "node_modules/.bin/webpack --env.production",
     "build:server": "node_modules/.bin/babel src/server.js --out-file dist/server.js",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
