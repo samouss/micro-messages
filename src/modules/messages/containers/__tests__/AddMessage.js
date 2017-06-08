@@ -8,7 +8,10 @@ import Connect, { AddMessage } from '../AddMessage';
 import type { Props } from '../AddMessage';
 
 jest.mock('../../actions', () => ({
-  postMessage: jest.fn(input => input),
+  postMessage: jest.fn(input => ({
+    type: 'POST_MESSAGE',
+    input,
+  })),
 }));
 
 describe('<AddMessage />', () => {
@@ -175,7 +178,10 @@ describe('<AddMessage />', () => {
       // $FlowFixMe
       component.props().postMessage(input);
 
-      expect(context.store.dispatch).toHaveBeenCalledWith(input);
+      expect(context.store.dispatch).toHaveBeenCalledWith({
+        type: 'POST_MESSAGE',
+        input,
+      });
     });
   });
 });
