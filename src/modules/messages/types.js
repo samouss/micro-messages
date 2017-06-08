@@ -5,6 +5,8 @@ export type MessageBody = string;
 
 export type Visibility = 'public' | 'private';
 
+export type VisibilityFilter = Visibility | 'all';
+
 export type Message = {
   id: MessageId,
   date: string,
