@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import configureStore from 'store/configureStore';
 import Layout from 'components/Layout';
 import Sidebar from 'components/Sidebar';
+import FiltersMessage from 'modules/messages/containers/FiltersMessage';
 import VisibleMessagesList from 'modules/messages/containers/VisibleMessagesList';
 import VisibleMessage from 'modules/messages/containers/VisibleMessage';
 import AddMessage from 'modules/messages/containers/AddMessage';
@@ -22,6 +23,8 @@ const App = () => (
     <Router>
       <Layout>
         <Sidebar>
+          <FiltersMessage />
+
           <Route component={VisibleMessagesList} />
         </Sidebar>
 
