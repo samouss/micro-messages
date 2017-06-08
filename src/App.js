@@ -1,5 +1,7 @@
 // @flow
 
+import 'moment/locale/fr';
+import moment from 'moment';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -10,6 +12,8 @@ import VisibleMessagesList from 'modules/messages/containers/VisibleMessagesList
 import VisibleMessage from 'modules/messages/containers/VisibleMessage';
 import AddMessage from 'modules/messages/containers/AddMessage';
 import './App.css';
+
+moment.locale('fr');
 
 const store = configureStore();
 
