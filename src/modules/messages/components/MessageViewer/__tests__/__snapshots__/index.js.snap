@@ -13,7 +13,7 @@ exports[`<MessageViewer /> expect to render the component correctly 1`] = `
       <span
         styleName="MessageViewer__Row__Label"
       >
-        Reçu le:
+        Reçu:
       </span>
       <TimeFromDate
         date="SOME_DATE"
