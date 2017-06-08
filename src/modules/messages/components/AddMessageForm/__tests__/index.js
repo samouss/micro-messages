@@ -71,7 +71,7 @@ describe('<AddMessageForm />', () => {
       expect(component.state()).toEqual(expectation.before);
 
       component
-        .find('[styleName="AddMessageForm__Row__Radio__Input"]')
+        .find('Radio')
         .first()
         .simulate('change', {
           currentTarget: {
@@ -113,7 +113,6 @@ describe('<AddMessageForm />', () => {
 
       component
         .find('[styleName="AddMessageForm__Row__Textarea"]')
-        .first()
         .simulate('change', {
           currentTarget: {
             name: 'body',

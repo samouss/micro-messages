@@ -75,7 +75,7 @@ class AddMessageForm extends Component {
                 id={current}
                 name="visibility"
                 value={current}
-                checked={current === visibility}
+                checked={visibility === current}
                 onChange={this.onChange}
                 required
               >
