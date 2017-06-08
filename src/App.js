@@ -8,6 +8,7 @@ import Layout from 'components/Layout';
 import Sidebar from 'components/Sidebar';
 import VisibleMessagesList from 'modules/messages/containers/VisibleMessagesList';
 import VisibleMessage from 'modules/messages/containers/VisibleMessage';
+import AddMessage from 'modules/messages/containers/AddMessage';
 import './App.css';
 
 const store = configureStore();
@@ -19,6 +20,8 @@ const App = () => (
         <Sidebar>
           <Route component={VisibleMessagesList} />
         </Sidebar>
+
+        <AddMessage />
 
         <Route path="/:messageId" component={VisibleMessage} />
       </Layout>
