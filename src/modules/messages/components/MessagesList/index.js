@@ -11,7 +11,7 @@ export type Props = {
 };
 
 const MessagesList = ({ messages }: Props) => (
-  <ul>
+  <ul styleName="MessagesList">
     {messages.map(message => (
       <MessageItem
         key={message.id}

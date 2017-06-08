@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<MessagesList /> expect to render the component correctly 1`] = `
-<ul>
+<ul
+  styleName="MessagesList"
+>
   <MessageItem
     message={
       Object {
