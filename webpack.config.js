@@ -17,6 +17,7 @@ const CSSLoaderConfiguration = isProduction => ({
     localIdentName: CSSLoaderLocalIdentifier(isProduction),
     sourceMap: isProduction,
     minimize: isProduction,
+    importLoader: 1,
   },
 });
 
@@ -68,9 +69,13 @@ module.exports = (options = {}) => {
           loader: !isProduction ? [
             { loader: 'style-loader' },
             CSSLoaderConfiguration(isProduction),
+            { loader: 'postcss-loader' },
           ] : ExtractTextPlugin.extract({
             fallback: 'style-loader',
-            use: CSSLoaderConfiguration(isProduction),
+            use: [
+              CSSLoaderConfiguration(isProduction),
+              { loader: 'postcss-loader' },
+            ],
           }),
         },
         {
