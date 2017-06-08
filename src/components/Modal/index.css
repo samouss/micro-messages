@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
   top: 0;
   right: 0;
   bottom: 0;
