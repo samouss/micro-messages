@@ -17,26 +17,6 @@
   margin-right: 10px;
 }
 
-.AddMessageForm__Row__Radios {
-  display: flex;
-}
-
-.AddMessageForm__Row__Radio {
-  display: flex;
-}
-
-.AddMessageForm__Row__Radio:first-child {
-  margin-right: 10px;
-}
-
-.AddMessageForm__Row__Radio:hover {
-  cursor: pointer;
-}
-
-.AddMessageForm__Row__Radio__Input {
-  margin-right: 5px;
-}
-
 .AddMessageForm__Row__Textarea {
   font-size: 0.9rem;
   border: 1px solid #E5E5E5;

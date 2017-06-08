@@ -12,46 +12,32 @@ exports[`<AddMessageForm /> expect to render the component correctly 1`] = `
     >
       Visibilité:
     </span>
-    <div
-      styleName="AddMessageForm__Row__Radios"
-    >
-      <label
-        htmlFor="public"
-        styleName="AddMessageForm__Row__Radio"
+    <Group>
+      <Radio
+        checked={true}
+        id="public"
+        name="visibility"
+        onChange={[Function]}
+        required={true}
+        value="public"
       >
-        <input
-          checked={true}
-          id="public"
-          name="visibility"
-          onChange={[Function]}
-          required={true}
-          styleName="AddMessageForm__Row__Radio__Input"
-          type="radio"
-          value="public"
-        />
         <Label
           type="public"
         />
-      </label>
-      <label
-        htmlFor="private"
-        styleName="AddMessageForm__Row__Radio"
+      </Radio>
+      <Radio
+        checked={false}
+        id="private"
+        name="visibility"
+        onChange={[Function]}
+        required={true}
+        value="private"
       >
-        <input
-          checked={false}
-          id="private"
-          name="visibility"
-          onChange={[Function]}
-          required={true}
-          styleName="AddMessageForm__Row__Radio__Input"
-          type="radio"
-          value="private"
-        />
         <Label
           type="private"
         />
-      </label>
-    </div>
+      </Radio>
+    </Group>
   </div>
   <div
     styleName="AddMessageForm__Row"
@@ -89,46 +75,32 @@ exports[`<AddMessageForm /> expect to render the component correctly with body 1
     >
       Visibilité:
     </span>
-    <div
-      styleName="AddMessageForm__Row__Radios"
-    >
-      <label
-        htmlFor="public"
-        styleName="AddMessageForm__Row__Radio"
+    <Group>
+      <Radio
+        checked={true}
+        id="public"
+        name="visibility"
+        onChange={[Function]}
+        required={true}
+        value="public"
       >
-        <input
-          checked={true}
-          id="public"
-          name="visibility"
-          onChange={[Function]}
-          required={true}
-          styleName="AddMessageForm__Row__Radio__Input"
-          type="radio"
-          value="public"
-        />
         <Label
           type="public"
         />
-      </label>
-      <label
-        htmlFor="private"
-        styleName="AddMessageForm__Row__Radio"
+      </Radio>
+      <Radio
+        checked={false}
+        id="private"
+        name="visibility"
+        onChange={[Function]}
+        required={true}
+        value="private"
       >
-        <input
-          checked={false}
-          id="private"
-          name="visibility"
-          onChange={[Function]}
-          required={true}
-          styleName="AddMessageForm__Row__Radio__Input"
-          type="radio"
-          value="private"
-        />
         <Label
           type="private"
         />
-      </label>
-    </div>
+      </Radio>
+    </Group>
   </div>
   <div
     styleName="AddMessageForm__Row"
@@ -166,46 +138,32 @@ exports[`<AddMessageForm /> onSubmit expect to call onSubmit when form is submit
     >
       Visibilité:
     </span>
-    <div
-      styleName="AddMessageForm__Row__Radios"
-    >
-      <label
-        htmlFor="public"
-        styleName="AddMessageForm__Row__Radio"
+    <Group>
+      <Radio
+        checked={true}
+        id="public"
+        name="visibility"
+        onChange={[Function]}
+        required={true}
+        value="public"
       >
-        <input
-          checked={true}
-          id="public"
-          name="visibility"
-          onChange={[Function]}
-          required={true}
-          styleName="AddMessageForm__Row__Radio__Input"
-          type="radio"
-          value="public"
-        />
         <Label
           type="public"
         />
-      </label>
-      <label
-        htmlFor="private"
-        styleName="AddMessageForm__Row__Radio"
+      </Radio>
+      <Radio
+        checked={false}
+        id="private"
+        name="visibility"
+        onChange={[Function]}
+        required={true}
+        value="private"
       >
-        <input
-          checked={false}
-          id="private"
-          name="visibility"
-          onChange={[Function]}
-          required={true}
-          styleName="AddMessageForm__Row__Radio__Input"
-          type="radio"
-          value="private"
-        />
         <Label
           type="private"
         />
-      </label>
-    </div>
+      </Radio>
+    </Group>
   </div>
   <div
     styleName="AddMessageForm__Row"

@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import Label from 'components/Label';
 import { SubmitButton } from 'components/Button';
+import { GroupInput, RadioInput } from 'components/Input';
 import './index.css';
 
 import type { MessageInput, Visibility } from '../../types';
@@ -67,30 +68,23 @@ class AddMessageForm extends Component {
       <form onSubmit={this.onSubmit}>
         <div styleName="AddMessageForm__Row">
           <span styleName="AddMessageForm__Row__Label">Visibilité:</span>
-          <div styleName="AddMessageForm__Row__Radios">
+          <GroupInput>
             {(['public', 'private']: Array<Visibility>).map(current => (
-              <label
+              <RadioInput
                 key={current}
-                htmlFor={current}
-                styleName="AddMessageForm__Row__Radio"
+                id={current}
+                name="visibility"
+                value={current}
+                checked={current === visibility}
+                onChange={this.onChange}
+                required
               >
-                <input
-                  id={current}
-                  styleName="AddMessageForm__Row__Radio__Input"
-                  name="visibility"
-                  type="radio"
-                  value={current}
-                  checked={current === visibility}
-                  onChange={this.onChange}
-                  required
-                />
-
                 <Label
                   type={current}
                 />
-              </label>
+              </RadioInput>
             ))}
-          </div>
+          </GroupInput>
         </div>
 
         <div styleName="AddMessageForm__Row">
