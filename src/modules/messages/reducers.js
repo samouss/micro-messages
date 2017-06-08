@@ -78,3 +78,7 @@ export const getMessage = (state: State, id: MessageId) => {
 export const getMessages = (state: State) => {
   return getMessageIds(state).map(id => getMessage(state, id));
 };
+
+export const getVisibilityFilter = (state: State) => {
+  return getState(state).visibilityFilter;
+};

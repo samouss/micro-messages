@@ -26,7 +26,7 @@ export type VisibilityFilterState = VisibilityFilter;
 export type MessageState = {
   byId: ByIdState,
   ids: IdsState,
-  VisibilityFilter: VisibilityFilterState,
+  visibilityFilter: VisibilityFilterState,
 };
 
 export type FetchMessagesRequestAction = { type: 'FETCH_MESSAGES_REQUEST' };

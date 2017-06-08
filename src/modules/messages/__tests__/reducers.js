@@ -3,7 +3,6 @@
 import { createMockMessage } from 'test/messages';
 import reducers, * as selectors from '../reducers';
 
-import type { State } from 'store/types';
 import type { MessageState, MessageAction } from '../types';
 
 describe('message', () => {
@@ -209,6 +208,7 @@ describe('message', () => {
             ids: [
               id,
             ],
+            visibilityFilter: 'all',
           },
         };
 
@@ -225,6 +225,7 @@ describe('message', () => {
           messages: {
             byId: {},
             ids: [],
+            visibilityFilter: 'all',
           },
         };
 
@@ -236,7 +237,7 @@ describe('message', () => {
 
     describe('getMessages', () => {
       it('expect to return an array of messages', () => {
-        const state: State = {
+        const state = {
           messages: {
             byId: {
               ID123: createMockMessage('ID123'),
@@ -246,6 +247,7 @@ describe('message', () => {
               'ID123',
               'ID456',
             ],
+            visibilityFilter: 'all',
           },
         };
 
@@ -260,15 +262,34 @@ describe('message', () => {
       });
 
       it('expect to return an empty array', () => {
-        const state: State = {
+        const state = {
           messages: {
             byId: {},
             ids: [],
+            visibilityFilter: 'all',
           },
         };
 
         const expectation = [];
         const actual = selectors.getMessages(state);
+
+        expect(actual).toEqual(expectation);
+      });
+    });
+
+    describe('getVisibilityFilter', () => {
+      it('expect to return the visibility filter', () => {
+        const state = {
+          messages: {
+            byId: {},
+            ids: [],
+            visibilityFilter: 'all',
+          },
+        };
+
+        const expectation = 'all';
+
+        const actual = selectors.getVisibilityFilter(state);
 
         expect(actual).toEqual(expectation);
       });
