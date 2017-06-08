@@ -16,7 +16,7 @@ const MessageViewer = ({ message }: Props) => (
   <div styleName="MessageViewer">
     <div styleName="MessageViewer__Header">
       <p styleName="MessageViewer__Row">
-        <span styleName="MessageViewer__Row__Label">Reçu le:</span>
+        <span styleName="MessageViewer__Row__Label">Reçu:</span>
         <TimeFromNow
           date={message.date}
         />
